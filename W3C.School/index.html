@@ -1,0 +1,50 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="André Davis">
+		<meta name="description" content="A playground to learn Text-To-Speech">
+		
+
+		<script type="text/javascript" src=".\jQuery2.1.4.js"></script>
+		
+		<title>W3C School Text-To-Speech Library Playground</title>
+		
+		<link rel="stylesheet" href=".\style.css">
+		<script type="text/javascript" src=".\voice.js"></script>
+	</head>
+	<body>
+		<h2>Text-To-Speech</h2>
+		<hr>
+		<p id="supportMsg"></p>
+				
+		<textarea id="TextToRead" class="textEntry" placeholder="Some Default Text."></textarea>
+		<div class="smallGap">
+			<label>Voices
+				<select id="voices"></select>
+			</label>
+		</div>
+		
+		<div>
+			<div id="buttons" class="smallGap">
+				<button id="Start" type="button" class="greenButton actionButton">Start</button>
+				<button id="Pause" type="button" class="yellowButton actionButton">Pause</button>
+				<button id="Resume"  type="button" class="blueButton actionButton">Resume</button>
+				<button id="Stop"  type="button" class="redButton actionButton">Stop</button>
+			</div>
+			<br /><br />
+			<p id="btnMessage"></p>
+		</div>
+		
+		<script type="text/javascript">
+			(function(){
+				var sMsg = document.getElementById('supportMsg');
+				if ('speechSynthesis' in window) {
+					sMsg.innerHTML = 'Your browser <strong>supports</strong> speech synthesis.';
+				} else {
+					sMsg.innerHTML = 'Sorry your browser <strong>does not support</strong> speech synthesis.';
+				}
+			})();
+		</script>
+		
+	</body>
+</html>
